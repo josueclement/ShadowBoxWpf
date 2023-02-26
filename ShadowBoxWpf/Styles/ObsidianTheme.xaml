@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/FontsAndColors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/Button.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/CheckBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/ComboBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/ContextMenu.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/DataGrid.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/Expander.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/GroupBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/ListBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/ListView.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/Menu.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/PasswordBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/ProgressBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/RadioButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/ScrollBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/ScrollViewer.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/Slider.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/StatusBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/TextBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/ToolTip.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ShadowBoxWpf;component/Styles/Obsidian/TreeView.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>
