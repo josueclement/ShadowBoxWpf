@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShadowBoxWpfTester"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Background="{DynamicResource ShadowBox.Obsidian.Brushes.Background1}">
     <Grid>
-
+        <StackPanel Margin="10">
+            <Button Content="Test" Margin="10" />
+            <Button Content="Test" Margin="10" IsEnabled="False" />
+        </StackPanel>
     </Grid>
 </Window>
