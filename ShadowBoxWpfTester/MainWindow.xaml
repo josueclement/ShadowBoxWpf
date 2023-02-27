@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:ShadowBoxWpfTester"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Background="{DynamicResource ShadowBox.Obsidian.Brushes.Background1}">
+        Background="{DynamicResource Obsidian.Brushes.Background}">
     <Grid>
         <StackPanel Margin="10">
-            <Button Content="IMPORT FILE" Margin="10" />
+            <Button Content="Normal button" Margin="10" />
+            <Button Content="Accent1 button" Style="{DynamicResource Accent1}" Margin="10" />
+            <Button Content="Accent2 button" Style="{DynamicResource Accent2}" Margin="10" />
             <Button Content="Test" Margin="10" IsEnabled="False" />
         </StackPanel>
     </Grid>
