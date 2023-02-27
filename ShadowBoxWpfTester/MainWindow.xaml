@@ -9,7 +9,7 @@
         Background="{DynamicResource ShadowBox.Obsidian.Brushes.Background1}">
     <Grid>
         <StackPanel Margin="10">
-            <Button Content="Test" Margin="10" />
+            <Button Content="IMPORT FILE" Margin="10" />
             <Button Content="Test" Margin="10" IsEnabled="False" />
         </StackPanel>
     </Grid>
