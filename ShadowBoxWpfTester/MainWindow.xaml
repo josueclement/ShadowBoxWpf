@@ -19,6 +19,8 @@
                 <TextBox Text="test" Margin="10" />
                 <TextBox Text="disabled textbox" Margin="10" IsEnabled="False" />
                 <TextBox Text="readonly textbox" Margin="10" IsReadOnly="True" />
+                <PasswordBox Password="test" Margin="10" />
+                <PasswordBox Password="disabled textbox" Margin="10" IsEnabled="False" />
             </StackPanel>
         </ScrollViewer>
     </Grid>
