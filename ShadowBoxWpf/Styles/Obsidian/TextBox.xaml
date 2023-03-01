@@ -5,6 +5,7 @@
     <Style TargetType="{x:Type TextBox}" x:Key="Obsidian.TextBox">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.TextBox.Normal}" />
         <Setter Property="Foreground" Value="{DynamicResource Obsidian.Brushes.TextBox.Text}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Obsidian.Brushes.TextBox.Border}" />
@@ -14,22 +15,44 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
-                    <Border BorderThickness="0 0 0 2" CornerRadius="4" BorderBrush="Red">
-                        <Border SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4">
-                            <ScrollViewer Margin="6"
+                    <Border CornerRadius="4"
+                            Background="{TemplateBinding BorderBrush}"
+                            Padding="0.96 1 1 0">
+                        <Border x:Name="focusBorder"
+                                CornerRadius="4"
+                                Background="{DynamicResource Obsidian.Brushes.TextBox.Border}"
+                                Padding="0 0 0 2">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="4">
+                                <ScrollViewer Margin="6"
                                           x:Name="PART_ContentHost" />
+                            </Border>
                         </Border>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="focusBorder" Property="Background" Value="{DynamicResource Obsidian.Brushes.Accent1.Normal}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource Obsidian.Brushes.Button.TextDisabled}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.TextBox.MouseOver}" />
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.TextBox.MouseDown}" />
+            </Trigger>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.TextBox.Normal}" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
-    <!-- Override Buttons style -->
+    <!-- Override TextBox style -->
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource Obsidian.TextBox}" />
     
 </ResourceDictionary>
