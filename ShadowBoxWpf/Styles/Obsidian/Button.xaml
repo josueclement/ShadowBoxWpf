@@ -139,4 +139,50 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style TargetType="{x:Type Button}" x:Key="Error">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.Error.Normal}" />
+        <Setter Property="Foreground" Value="{DynamicResource Obsidian.Brushes.D1.Text}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Obsidian.Brushes.Error.Normal}" />
+        <Setter Property="BorderThickness" Value="1.5" />
+        <Setter Property="FontFamily" Value="{DynamicResource ShadowBox.Obsidian.Fonts.MainFont}" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Margin="6"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.Error.MouseOver}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource Obsidian.Brushes.Error.MouseOver}" />
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource Obsidian.Brushes.D1.Text}" />
+                <Setter Property="ForceCursor" Value="True" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.Error.MouseDown}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource Obsidian.Brushes.Error.MouseDown}" />
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource Obsidian.Brushes.D1.Text}" />
+                <Setter Property="ForceCursor" Value="True" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.D1.FillNormal}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource Obsidian.Brushes.D1.Border}" />
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource Obsidian.Brushes.D1.TextDisabled}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>
