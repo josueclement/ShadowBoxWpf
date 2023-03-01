@@ -10,9 +10,9 @@
     <Grid>
         <StackPanel Margin="10">
             <Button Content="Normal button" Margin="10" />
-            <Button Content="Accent1 button" Style="{DynamicResource Accent1}" Margin="10" />
-            <Button Content="Accent2 button" Style="{DynamicResource Accent2}" Margin="10" />
-            <Button Content="Error button" Style="{DynamicResource Error}" Margin="10" />
+            <Button Content="Accent1 button" Style="{DynamicResource Obsidian.Button.Accent1}" Margin="10" />
+            <Button Content="Accent2 button" Style="{DynamicResource Obsidian.Button.Accent2}" Margin="10" />
+            <Button Content="Error button" Style="{DynamicResource Obsidian.Button.Error}" Margin="10" />
             <Button Content="Disabled button" Margin="10" IsEnabled="False" />
         </StackPanel>
     </Grid>
