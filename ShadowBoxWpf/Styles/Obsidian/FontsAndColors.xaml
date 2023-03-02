@@ -58,19 +58,19 @@
     <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.TextDisabled" Color="{DynamicResource Obsidian.Colors.TextBox.TextDisabled}" />
 
 
-    <!-- D2 -->
-    <!--<Color x:Key="Obsidian.Colors.D2.Border">#a8a8a8</Color>
-    <Color x:Key="Obsidian.Colors.D2.FillNormal">#1d1d1d</Color>
-    <Color x:Key="Obsidian.Colors.D2.FillMouseOver">#2a2a2a</Color>
-    <Color x:Key="Obsidian.Colors.D2.FillMouseDown">#303030</Color>
-    <Color x:Key="Obsidian.Colors.D2.Text">#eeeeee</Color>
-    <Color x:Key="Obsidian.Colors.D2.TextDisabled">#717171</Color>
-    <SolidColorBrush x:Key="Obsidian.Brushes.D2.Border" Color="{DynamicResource Obsidian.Colors.D2.Border}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.D2.FillNormal" Color="{DynamicResource Obsidian.Colors.D2.FillNormal}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.D2.FillMouseOver" Color="{DynamicResource Obsidian.Colors.D2.FillMouseOver}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.D2.FillMouseDown" Color="{DynamicResource Obsidian.Colors.D2.FillMouseDown}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.D2.Text" Color="{DynamicResource Obsidian.Colors.D2.Text}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.D2.TextDisabled" Color="{DynamicResource Obsidian.Colors.D2.TextDisabled}" />-->
+    <!-- CheckBox -->
+    <Color x:Key="Obsidian.Colors.CheckBox.Border">#a8a8a8</Color>
+    <Color x:Key="Obsidian.Colors.CheckBox.Normal">#1d1d1d</Color>
+    <Color x:Key="Obsidian.Colors.CheckBox.MouseOver">#2a2a2a</Color>
+    <Color x:Key="Obsidian.Colors.CheckBox.MouseDown">#303030</Color>
+    <Color x:Key="Obsidian.Colors.CheckBox.Text">#eeeeee</Color>
+    <Color x:Key="Obsidian.Colors.CheckBox.TextDisabled">#717171</Color>
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.Border" Color="{DynamicResource Obsidian.Colors.CheckBox.Border}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.Normal" Color="{DynamicResource Obsidian.Colors.CheckBox.Normal}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.MouseOver" Color="{DynamicResource Obsidian.Colors.CheckBox.MouseOver}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.MouseDown" Color="{DynamicResource Obsidian.Colors.CheckBox.MouseDown}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.Text" Color="{DynamicResource Obsidian.Colors.CheckBox.Text}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.TextDisabled" Color="{DynamicResource Obsidian.Colors.CheckBox.TextDisabled}" />
 
     <!-- D3 -->
     <!--<Color x:Key="Obsidian.Colors.D3.Border">#2b2b2b</Color>

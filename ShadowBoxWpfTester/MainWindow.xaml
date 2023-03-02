@@ -24,6 +24,9 @@
                 <TextBox Text="readonly textbox" Margin="10" IsReadOnly="True" />
                 <PasswordBox Password="test" Margin="10" />
                 <PasswordBox Password="disabled textbox" Margin="10" IsEnabled="False" />
+                <CheckBox Content="This is a checkbox" Margin="10" />
+                <CheckBox Content="This is a checkbox" Margin="10" IsChecked="{x:Null}" />
+                <CheckBox Content="This is a checkbox" Margin="10" IsChecked="True" IsEnabled="False" />
             </StackPanel>
         </ScrollViewer>
     </Grid>
