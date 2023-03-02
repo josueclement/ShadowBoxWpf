@@ -18,31 +18,46 @@
     <Style TargetType="{x:Type Thumb}" x:Key="Obsidian.ScrollBar.Thumb">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.ScrollBar.Normal}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
-                    <Border CornerRadius="2"
-                            Background="{DynamicResource Obsidian.Brushes.TextBox.Text}" />
+                    <Border x:Name="ThumbBorder" CornerRadius="2"
+                            Background="{DynamicResource Obsidian.Brushes.ScrollBar.Normal}" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ThumbBorder" Property="Background" Value="{DynamicResource Obsidian.Brushes.ScrollBar.MouseOver}" />
+                        </Trigger>
+                        <!--<Trigger Property="pres" Value="True">
+                            <Setter TargetName="ThumbBorder" Property="Background" Value="{DynamicResource Obsidian.Brushes.ScrollBar.MouseOver}" />
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <!--<Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.ScrollBar.MouseOver}" />
+            </Trigger>
+        </Style.Triggers>-->
     </Style>
     
     <!-- Horizontal ScrollBar style -->
     <ControlTemplate TargetType="{x:Type ScrollBar}" x:Key="Obsidian.ScrollBar.Horizontal">
-        <Grid Height="14">
-            <Track x:Name="PART_Track">
+        <Grid Height="10">
+            <Track x:Name="PART_Track"
+                   IsDirectionReversed="False">
                 <Track.DecreaseRepeatButton>
-                    <RepeatButton Style="{StaticResource Obsidian.ScrollBar.ScrollBarPageButton}"
-                                  Command="Scrollbar.PageLeftCommand" />
+                    <RepeatButton Style="{DynamicResource Obsidian.ScrollBar.ScrollBarPageButton}"
+                                  Command="ScrollBar.PageLeftCommand" />
                 </Track.DecreaseRepeatButton>
                 <Track.Thumb>
-                    <Thumb Style="{StaticResource Obsidian.ScrollBar.Thumb}"
+                    <Thumb Style="{DynamicResource Obsidian.ScrollBar.Thumb}"
                            Margin="0 1" />
                 </Track.Thumb>
                 <Track.IncreaseRepeatButton>
-                    <RepeatButton Style="{StaticResource Obsidian.ScrollBar.ScrollBarPageButton}"
-                                  Command="Scrollbar.PageRightCommand" />
+                    <RepeatButton Style="{DynamicResource Obsidian.ScrollBar.ScrollBarPageButton}"
+                                  Command="ScrollBar.PageRightCommand" />
                 </Track.IncreaseRepeatButton>
             </Track>
         </Grid>
@@ -50,19 +65,20 @@
 
     <!-- Vertical ScrollBar style -->
     <ControlTemplate TargetType="{x:Type ScrollBar}" x:Key="Obsidian.ScrollBar.Vertical">
-        <Grid Width="14">
-            <Track x:Name="PART_Track">
+        <Grid Width="10">
+            <Track x:Name="PART_Track"
+                   IsDirectionReversed="True">
                 <Track.DecreaseRepeatButton>
-                    <RepeatButton Style="{StaticResource Obsidian.ScrollBar.ScrollBarPageButton}"
-                                  Command="Scrollbar.PageUpCommand" />
+                    <RepeatButton Style="{DynamicResource Obsidian.ScrollBar.ScrollBarPageButton}"
+                                  Command="ScrollBar.PageUpCommand" />
                 </Track.DecreaseRepeatButton>
                 <Track.Thumb>
-                    <Thumb Style="{StaticResource Obsidian.ScrollBar.Thumb}"
+                    <Thumb Style="{DynamicResource Obsidian.ScrollBar.Thumb}"
                            Margin="0 1" />
                 </Track.Thumb>
                 <Track.IncreaseRepeatButton>
-                    <RepeatButton Style="{StaticResource Obsidian.ScrollBar.ScrollBarPageButton}"
-                                  Command="Scrollbar.PageDownCommand" />
+                    <RepeatButton Style="{DynamicResource Obsidian.ScrollBar.ScrollBarPageButton}"
+                                  Command="ScrollBar.PageDownCommand" />
                 </Track.IncreaseRepeatButton>
             </Track>
         </Grid>
@@ -70,7 +86,23 @@
 
     <!-- ScrollBar style -->
     <Style TargetType="{x:Type ScrollBar}" x:Key="Obsidian.ScrollBar">
-        
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="Width" Value="Auto" />
+                <Setter Property="Height" Value="14" />
+                <Setter Property="Template" Value="{DynamicResource Obsidian.ScrollBar.Horizontal}" />
+            </Trigger>
+            <Trigger Property="Orientation" Value="Vertical">
+                <Setter Property="Width" Value="14" />
+                <Setter Property="Height" Value="Auto" />
+                <Setter Property="Template" Value="{DynamicResource Obsidian.ScrollBar.Vertical}" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
+
+    <!-- Override ScrollBar style -->
+    <Style TargetType="{x:Type ScrollBar}" BasedOn="{StaticResource Obsidian.ScrollBar}" />
 
 </ResourceDictionary>

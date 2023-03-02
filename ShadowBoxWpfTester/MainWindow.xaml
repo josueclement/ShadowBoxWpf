@@ -19,7 +19,7 @@
                 <TextBox Text="test" Margin="10" AcceptsReturn="True" Height="100"
                          ScrollViewer.VerticalScrollBarVisibility="Auto"
                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                         TextWrapping="Wrap"/>
+                         TextWrapping="NoWrap"/>
                 <TextBox Text="disabled textbox" Margin="10" IsEnabled="False" />
                 <TextBox Text="readonly textbox" Margin="10" IsReadOnly="True" />
                 <PasswordBox Password="test" Margin="10" />

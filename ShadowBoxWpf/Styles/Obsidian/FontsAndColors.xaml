@@ -72,6 +72,14 @@
     <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.Text" Color="{DynamicResource Obsidian.Colors.CheckBox.Text}" />
     <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.TextDisabled" Color="{DynamicResource Obsidian.Colors.CheckBox.TextDisabled}" />
 
+    <!-- ScrollBar -->
+    <Color x:Key="Obsidian.Colors.ScrollBar.Normal">#a8a8a8</Color>
+    <Color x:Key="Obsidian.Colors.ScrollBar.MouseOver">#cecece</Color>
+    <Color x:Key="Obsidian.Colors.ScrollBar.MouseDown">#e1e1e1</Color>
+    <SolidColorBrush x:Key="Obsidian.Brushes.ScrollBar.Normal" Color="{DynamicResource Obsidian.Colors.ScrollBar.Normal}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.ScrollBar.MouseOver" Color="{DynamicResource Obsidian.Colors.ScrollBar.MouseOver}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.ScrollBar.MouseDown" Color="{DynamicResource Obsidian.Colors.ScrollBar.MouseDown}" />
+
     <!-- D3 -->
     <!--<Color x:Key="Obsidian.Colors.D3.Border">#2b2b2b</Color>
     <Color x:Key="Obsidian.Colors.D3.FillNormal">#2b2b2b</Color>
