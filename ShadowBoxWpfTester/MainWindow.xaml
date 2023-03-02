@@ -16,7 +16,10 @@
                 <Button Content="Error button" Style="{DynamicResource Obsidian.Button.Error}" Margin="10" />
                 <Button Content="Disabled button" Margin="10" IsEnabled="False" />
                 <TextBox Text="test" Margin="10" />
-                <TextBox Text="test" Margin="10" />
+                <TextBox Text="test" Margin="10" AcceptsReturn="True" Height="100"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                         TextWrapping="Wrap"/>
                 <TextBox Text="disabled textbox" Margin="10" IsEnabled="False" />
                 <TextBox Text="readonly textbox" Margin="10" IsReadOnly="True" />
                 <PasswordBox Password="test" Margin="10" />
