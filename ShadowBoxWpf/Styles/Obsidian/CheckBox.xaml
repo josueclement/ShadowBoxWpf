@@ -4,9 +4,9 @@
     <Style TargetType="{x:Type CheckBox}" x:Key="Obsidian.CheckBox">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.Button.Normal}" />
-        <Setter Property="Foreground" Value="{DynamicResource Obsidian.Brushes.Button.Text}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Obsidian.Brushes.Button.Border}" />
+        <Setter Property="Background" Value="{DynamicResource Obsidian.Brushes.CheckBox.Normal}" />
+        <Setter Property="Foreground" Value="{DynamicResource Obsidian.Brushes.CheckBox.Text}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Obsidian.Brushes.CheckBox.Border}" />
         <Setter Property="FontFamily" Value="{DynamicResource ShadowBox.Obsidian.Fonts.MainFont}" />
         <Setter Property="FontSize" Value="13" />
         <Setter Property="Template">
@@ -20,7 +20,8 @@
                                 CornerRadius="4"
                                 Padding="1"
                                 VerticalAlignment="Center">
-                            <Border Background="{TemplateBinding Background}"
+                            <Border x:Name="BackgroundBorder"
+                                    Background="{TemplateBinding Background}"
                                     CornerRadius="3">
                                 <Grid>
                                     <Path x:Name="CheckMark"
@@ -52,6 +53,7 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="CheckMark" Property="Stroke" Value="{DynamicResource Obsidian.Brushes.CheckBox.TextDisabled}" />
                             <Setter TargetName="IndeterminateMark" Property="Stroke" Value="{DynamicResource Obsidian.Brushes.CheckBox.TextDisabled}" />
+                            <Setter TargetName="BackgroundBorder" Property="Background" Value="{DynamicResource Obsidian.Brushes.CheckBox.MouseDown}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

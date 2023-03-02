@@ -24,7 +24,7 @@
                                 Padding="0 0 0 2">
                             <Border Background="{TemplateBinding Background}" CornerRadius="3">
                                 <ScrollViewer Margin="6"
-                                          x:Name="PART_ContentHost" />
+                                              x:Name="PART_ContentHost" />
                             </Border>
                         </Border>
                     </Border>
