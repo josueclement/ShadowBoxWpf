@@ -2,30 +2,26 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ControlTemplate TargetType="{x:Type ToggleButton}" x:Key="Obsidian.ComboBox.ToggleButton">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="20" />
-            </Grid.ColumnDefinitions>
-            <Border x:Name="Border" 
-                    Grid.ColumnSpan="2"
-                    CornerRadius="0"
+        <Border CornerRadius="4"
+                Background="{DynamicResource Obsidian.Brushes.TextBox.Border}">
+            <Border x:Name="innerBorder"
+                    CornerRadius="3"
                     Background="{DynamicResource Obsidian.Brushes.TextBox.Normal}"
-                    BorderBrush="{DynamicResource Obsidian.Brushes.TextBox.Border}"
-                    BorderThickness="1" />
-            <Border Grid.Column="0"
-                    CornerRadius="0" 
-                    Margin="1" 
-                    Background="{DynamicResource Obsidian.Brushes.TextBox.Normal}" 
-                    BorderBrush="{DynamicResource Obsidian.Brushes.TextBox.Border}"
-                    BorderThickness="0,0,1,0" />
-            <Path x:Name="Arrow"
-                  Grid.Column="1"     
-                  Fill="White"
-                  HorizontalAlignment="Center"
-                  VerticalAlignment="Center"
-                  Data="M 0 0 L 0 2 L 4 6 L 8 2 L 8 0 L 4 4" />
-        </Grid>
+                    Margin="1">
+                <Grid Margin="6" Height="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Path x:Name="Arrow"
+                          Grid.Column="1"     
+                          Fill="{DynamicResource Obsidian.Brushes.CheckBox.Text}"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Data="M 0 0 L 0 2 L 4 6 L 8 2 L 8 0 L 4 4" />
+                </Grid>
+            </Border>
+        </Border>
     </ControlTemplate>
 
     <ControlTemplate TargetType="{x:Type TextBox}" x:Key="Obsidian.ComboBox.TextBox">
@@ -33,10 +29,30 @@
                 Focusable="False"
                 Background="{TemplateBinding Background}" />
     </ControlTemplate>
+
+    <Style TargetType="{x:Type ComboBoxItem}" x:Key="Obsidian.ComboBoxItem">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                    <Border x:Name="ItemBorder">
+                        <ContentPresenter />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource Obsidian.Brushes.Accent1.Normal}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     
     <Style TargetType="{x:Type ComboBox}" x:Key="Obsidian.ComboBox">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource Obsidian.ComboBoxItem}" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
@@ -48,7 +64,6 @@
                         <Grid>
                             <ToggleButton Name="ToggleButton" 
                                           Template="{StaticResource Obsidian.ComboBox.ToggleButton}" 
-                                          Grid.Column="2" 
                                           Focusable="false"
                                           IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
                                           ClickMode="Press">
@@ -58,7 +73,7 @@
                                               Content="{TemplateBinding SelectionBoxItem}"
                                               ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                               ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                                              Margin="3,3,23,3"
+                                              Margin="6 6 23 6"
                                               VerticalAlignment="Center"
                                               HorizontalAlignment="Left" />
                             <TextBox x:Name="PART_EditableTextBox"
@@ -66,7 +81,7 @@
                                      Template="{StaticResource Obsidian.ComboBox.TextBox}" 
                                      HorizontalAlignment="Left" 
                                      VerticalAlignment="Center" 
-                                     Margin="3,3,23,3"
+                                     Margin="6 6 23 6"
                                      Focusable="True" 
                                      Background="#FF3F3F3F"
                                      Foreground="Green"
@@ -78,21 +93,21 @@
                                    AllowsTransparency="True" 
                                    Focusable="False"
                                    PopupAnimation="Slide">
-
-                                <Grid Name="DropDown"
-                                      SnapsToDevicePixels="True"                
-                                      MinWidth="{TemplateBinding ActualWidth}"
-                                      MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                                    <Border x:Name="DropDownBorder"
-                                            Background="#FF3F3F3F"
-                                            BorderThickness="1"
-                                            BorderBrush="#888888"/>
-                                    <ScrollViewer Margin="4,6,4,6"
-                                                  SnapsToDevicePixels="True">
-                                        <StackPanel IsItemsHost="True"
-                                                    KeyboardNavigation.DirectionalNavigation="Contained" />
-                                    </ScrollViewer>
-                                </Grid>
+                                <Border x:Name="DropDownBorder"
+                                        CornerRadius="4"
+                                        Background="{DynamicResource Obsidian.Brushes.TextBox.Border}"
+                                        MinWidth="{TemplateBinding ActualWidth}"
+                                        MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                                        Margin="1">
+                                    <Border CornerRadius="3"
+                                            Background="{DynamicResource Obsidian.Brushes.TextBox.Normal}">
+                                        <ScrollViewer Margin="4,6,4,6"
+                                                      SnapsToDevicePixels="True">
+                                            <StackPanel IsItemsHost="True"
+                                                        KeyboardNavigation.DirectionalNavigation="Contained" />
+                                        </ScrollViewer>
+                                    </Border>
+                                </Border>
                             </Popup>
                         </Grid>
                     </Grid>
@@ -107,7 +122,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
                         </Trigger>
                         <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
-                            <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0"/>
+                            <!--<Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0"/>-->
                             <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0"/>
                         </Trigger>
                         <Trigger Property="IsEditable"  Value="true">

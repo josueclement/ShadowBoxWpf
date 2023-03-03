@@ -33,8 +33,51 @@
                 <RadioButton GroupName="Test2" Content="Radio button disabled" Margin="10" IsChecked="True" IsEnabled="False" />
                 <ComboBox Margin="10">
                     <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
                 </ComboBox>
                 <ComboBox Margin="10" IsEditable="True">
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
+                    <ComboBoxItem>test</ComboBoxItem>
                     <ComboBoxItem>test</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
