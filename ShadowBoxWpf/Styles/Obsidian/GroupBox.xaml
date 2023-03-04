@@ -6,7 +6,7 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Foreground" Value="{DynamicResource Obsidian.Brushes.Button.Text}" />
-        <Setter Property="FontFamily" Value="{DynamicResource ShadowBox.Obsidian.Fonts.MainFont}" />
+        <Setter Property="FontFamily" Value="{DynamicResource Obsidian.Fonts.MainFont}" />
         <Setter Property="FontSize" Value="13" />
         <Setter Property="Template">
             <Setter.Value>
