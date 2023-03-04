@@ -95,6 +95,28 @@
                     <ComboBoxItem>test</ComboBoxItem>
                     <ComboBoxItem>test</ComboBoxItem>
                 </ComboBox>
+
+                <ListBox Margin="10" Height="100">
+                    <ListBoxItem>Test 1</ListBoxItem>
+                    <ListBoxItem>Test 2</ListBoxItem>
+                    <ListBoxItem>Test 3</ListBoxItem>
+                    <ListBoxItem>Test 4</ListBoxItem>
+                    <ListBoxItem>Test 5</ListBoxItem>
+                    <ListBoxItem>Test 6</ListBoxItem>
+                    <ListBoxItem>Test 7</ListBoxItem>
+                    <ListBoxItem>Test 8</ListBoxItem>
+                </ListBox>
+
+                <ListView Margin="10" Height="100">
+                    <ListViewItem>Test 1</ListViewItem>
+                    <ListViewItem>Test 2</ListViewItem>
+                    <ListViewItem>Test 3</ListViewItem>
+                    <ListViewItem>Test 4</ListViewItem>
+                    <ListViewItem>Test 5</ListViewItem>
+                    <ListViewItem>Test 6</ListViewItem>
+                    <ListViewItem>Test 7</ListViewItem>
+                    <ListViewItem>Test 8</ListViewItem>
+                </ListView>
             </StackPanel>
         </ScrollViewer>
     </Grid>
