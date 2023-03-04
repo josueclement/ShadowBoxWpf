@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!-- ComboBox ToggleButton style -->
     <ControlTemplate TargetType="{x:Type ToggleButton}" x:Key="Obsidian.ComboBox.ToggleButton">
         <Border CornerRadius="4"
                 Background="{DynamicResource Obsidian.Brushes.TextBox.Border}">
@@ -8,7 +9,8 @@
                     CornerRadius="3"
                     Background="{DynamicResource Obsidian.Brushes.TextBox.Normal}"
                     Margin="1">
-                <Grid Margin="6" Height="20">
+                <Grid Height="20"
+                      Margin="6">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition Width="20" />
@@ -22,22 +24,31 @@
                 </Grid>
             </Border>
         </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="innerBorder" Property="Background" Value="{DynamicResource Obsidian.Brushes.TextBox.MouseOver}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <ControlTemplate TargetType="{x:Type TextBox}" x:Key="Obsidian.ComboBox.TextBox">
+    <!--<ControlTemplate TargetType="{x:Type TextBox}" x:Key="Obsidian.ComboBox.TextBox">
         <Border x:Name="PART_ContentHost"
                 Focusable="False"
-                Background="{TemplateBinding Background}" />
-    </ControlTemplate>
+                Background="Transparent"
+                Margin="6"/>
+    </ControlTemplate>-->
 
+    <!-- ComboBoxItem style -->
     <Style TargetType="{x:Type ComboBoxItem}" x:Key="Obsidian.ComboBoxItem">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="FontFamily" Value="{DynamicResource ShadowBox.Obsidian.Fonts.MainFont}" />
+        <Setter Property="FontSize" Value="13" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBoxItem}">
                     <Border x:Name="ItemBorder">
-                        <ContentPresenter />
+                        <ContentPresenter Margin="6" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="True">
@@ -49,6 +60,7 @@
         </Setter>
     </Style>
     
+    <!-- ComboBox style -->
     <Style TargetType="{x:Type ComboBox}" x:Key="Obsidian.ComboBox">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -57,6 +69,8 @@
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
         <Setter Property="Foreground" Value="{DynamicResource Obsidian.Brushes.TextBox.Text}" />
+        <Setter Property="FontFamily" Value="{DynamicResource ShadowBox.Obsidian.Fonts.MainFont}" />
+        <Setter Property="FontSize" Value="13" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBox}">
@@ -73,22 +87,19 @@
                                               Content="{TemplateBinding SelectionBoxItem}"
                                               ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                               ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                                              Margin="6 6 23 6"
+                                              Margin="6 6 30 6"
                                               VerticalAlignment="Center"
                                               HorizontalAlignment="Left" />
-                            <TextBox x:Name="PART_EditableTextBox"
+                            <!--<TextBox x:Name="PART_EditableTextBox"
                                      Style="{x:Null}" 
                                      Template="{StaticResource Obsidian.ComboBox.TextBox}" 
-                                     HorizontalAlignment="Left" 
                                      VerticalAlignment="Center" 
-                                     Margin="6 6 23 6"
+                                     Margin="6 6 30 6"
                                      Focusable="True" 
-                                     Background="#FF3F3F3F"
-                                     Foreground="Green"
                                      Visibility="Hidden"
-                                     IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                                     IsReadOnly="{TemplateBinding IsReadOnly}"/>-->
                             <Popup Name="Popup"
-                                   Placement="Bottom"
+                                   Placement="Center"
                                    IsOpen="{TemplateBinding IsDropDownOpen}"
                                    AllowsTransparency="True" 
                                    Focusable="False"
@@ -101,7 +112,7 @@
                                         Margin="1">
                                     <Border CornerRadius="3"
                                             Background="{DynamicResource Obsidian.Brushes.TextBox.Normal}">
-                                        <ScrollViewer Margin="4,6,4,6"
+                                        <ScrollViewer Margin="4 6"
                                                       SnapsToDevicePixels="True">
                                             <StackPanel IsItemsHost="True"
                                                         KeyboardNavigation.DirectionalNavigation="Contained" />
@@ -121,21 +132,13 @@
                         <Trigger Property="IsGrouping" Value="true">
                             <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
                         </Trigger>
-                        <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
-                            <!--<Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0"/>-->
-                            <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0"/>
-                        </Trigger>
-                        <Trigger Property="IsEditable"  Value="true">
-                            <Setter Property="IsTabStop" Value="false"/>
-                            <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
-                            <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
-                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
+    <!-- Override ComboBox style -->
     <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource Obsidian.ComboBox}" />
 
 </ResourceDictionary>
