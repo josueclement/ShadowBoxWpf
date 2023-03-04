@@ -20,7 +20,7 @@
                     </StackPanel>
                 </GroupBox>
 
-                <Expander Header="Buttons" Margin="10">
+                <Expander Header="Buttons" Margin="10" IsEnabled="False" IsExpanded="True">
                     <StackPanel Margin="10">
                         <Button Content="Normal button" Margin="10" />
                         <Button Content="Accent1 button" Style="{DynamicResource Obsidian.Button.Accent1}" Margin="10" />

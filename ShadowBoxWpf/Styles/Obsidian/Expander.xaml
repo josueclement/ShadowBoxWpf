@@ -3,16 +3,9 @@
 
     <!-- Expander ToggleButton ControlTemplate -->
     <ControlTemplate TargetType="{x:Type ToggleButton}" x:Key="Obsidian.Expander.ToggleButton">
-        <Border x:Name="Border"
-                CornerRadius="4 4 0 0"
-                Background="{DynamicResource Obsidian.Brushes.TextBox.Border}">
-            <Border x:Name="innerBorder"
-                    CornerRadius="3 3 0 0"
-                    Background="{DynamicResource Obsidian.Brushes.Accent1.Normal}"
-                    Margin="1">
+        
                 <ContentPresenter />
-            </Border>
-        </Border>
+            
     </ControlTemplate>
 
     <Style TargetType="{x:Type Expander}" x:Key="Obsidian.Expander">
@@ -29,39 +22,47 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition x:Name="ContentRow" Height="0" />
                         </Grid.RowDefinitions>
-                        <Border x:Name="Border"
-                                Grid.Row="0"
+                        <Border Grid.Row="0"
                                 BorderThickness="1"
                                 CornerRadius="4 4 0 0">
                             <ToggleButton OverridesDefaultStyle="True"
                                           Template="{StaticResource Obsidian.Expander.ToggleButton}"
                                           IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="20" />
-                                        <ColumnDefinition />
-                                    </Grid.ColumnDefinitions>
-                                    <Path x:Name="CollapsedArrow"
-                                          HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"
-                                          Fill="{DynamicResource Obsidian.Brushes.CheckBox.Text}"
-                                          Data="M 0 0 L 4 4 L 8 0 Z">
-                                    </Path>
-                                    <Path x:Name="ExpandededArrow"
-                                          HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"
-                                          Visibility="Collapsed"
-                                          Fill="{DynamicResource Obsidian.Brushes.CheckBox.Text}"
-                                          Data="M 0 4 L 4 0 L 8 4 Z">
-                                    </Path>
-                                    <ContentPresenter Grid.Column="1"
-                                                      Margin="6"
-                                                      ContentSource="Header"
-                                                      RecognizesAccessKey="True"
-                                                      TextBlock.Foreground="{TemplateBinding Foreground}"
-                                                      TextBlock.FontFamily="{TemplateBinding FontFamily}"
-                                                      TextBlock.FontSize="{TemplateBinding FontSize}"/>
-                                </Grid>
+                                <Border x:Name="Border"
+                                        CornerRadius="4 4 0 0"
+                                        Background="{DynamicResource Obsidian.Brushes.TextBox.Border}">
+                                    <Border x:Name="innerBorder"
+                                            CornerRadius="3 3 0 0"
+                                            Background="{DynamicResource Obsidian.Brushes.Accent1.Normal}"
+                                            Margin="1">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="20" />
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Path x:Name="CollapsedArrow"
+                                                  HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  Fill="{DynamicResource Obsidian.Brushes.CheckBox.Text}"
+                                                  Data="M 0 0 L 4 4 L 8 0 Z">
+                                            </Path>
+                                            <Path x:Name="ExpandededArrow"
+                                                  HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  Visibility="Collapsed"
+                                                  Fill="{DynamicResource Obsidian.Brushes.CheckBox.Text}"
+                                                  Data="M 0 4 L 4 0 L 8 4 Z">
+                                            </Path>
+                                            <ContentPresenter Grid.Column="1"
+                                                              Margin="6"
+                                                              ContentSource="Header"
+                                                              RecognizesAccessKey="True"
+                                                              TextBlock.Foreground="{TemplateBinding Foreground}"
+                                                              TextBlock.FontFamily="{TemplateBinding FontFamily}"
+                                                              TextBlock.FontSize="{TemplateBinding FontSize}"/>
+                                        </Grid>
+                                    </Border>
+                                </Border>
                             </ToggleButton>
                         </Border>
                         <Border x:Name="Content"
@@ -79,6 +80,10 @@
                             <Setter TargetName="ContentRow" Property="Height" Value="{Binding Height, ElementName=Content}" />
                             <Setter TargetName="CollapsedArrow" Property="Visibility" Value="Hidden" />
                             <Setter TargetName="ExpandededArrow" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="innerBorder" Property="Background" Value="{DynamicResource Obsidian.Brushes.Button.Normal}" />
+                            <Setter Property="Foreground" Value="{DynamicResource Obsidian.Brushes.TextBox.TextDisabled}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
