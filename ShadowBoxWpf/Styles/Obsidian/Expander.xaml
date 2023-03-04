@@ -4,27 +4,13 @@
     <!-- Expander ToggleButton ControlTemplate -->
     <ControlTemplate TargetType="{x:Type ToggleButton}" x:Key="Obsidian.Expander.ToggleButton">
         <Border x:Name="Border"
-                CornerRadius="4"
+                CornerRadius="4 4 0 0"
                 Background="{DynamicResource Obsidian.Brushes.TextBox.Border}">
             <Border x:Name="innerBorder"
-                    CornerRadius="3"
+                    CornerRadius="3 3 0 0"
                     Background="{DynamicResource Obsidian.Brushes.Accent1.Normal}"
                     Margin="1">
-                <Grid>
-                    <Path x:Name="CollapsedArrow"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Fill="{DynamicResource Obsidian.Brushes.CheckBox.Text}"
-                          Data="M 0 0 L 4 4 L 8 0 Z">
-                    </Path>
-                    <Path x:Name="ExpandededArrow"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Visibility="Collapsed"
-                          Fill="{DynamicResource Obsidian.Brushes.CheckBox.Text}"
-                          Data="M 0 4 L 4 0 L 8 4 Z">
-                    </Path>
-                </Grid>
+                <ContentPresenter />
             </Border>
         </Border>
     </ControlTemplate>
@@ -47,34 +33,52 @@
                                 Grid.Row="0"
                                 BorderThickness="1"
                                 CornerRadius="4 4 0 0">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="20" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <ToggleButton OverridesDefaultStyle="True"
-                                              Template="{StaticResource Obsidian.Expander.ToggleButton}"
-                                              IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
-                                </ToggleButton>
-                                <ContentPresenter Grid.Column="1"
-                                                  Margin="6"
-                                                  ContentSource="Header"
-                                                  RecognizesAccessKey="True"
-                                                  TextBlock.Foreground="{TemplateBinding Foreground}"
-                                                  TextBlock.FontFamily="{TemplateBinding FontFamily}"
-                                                  TextBlock.FontSize="{TemplateBinding FontSize}"/>
-                            </Grid>
+                            <ToggleButton OverridesDefaultStyle="True"
+                                          Template="{StaticResource Obsidian.Expander.ToggleButton}"
+                                          IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Path x:Name="CollapsedArrow"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Fill="{DynamicResource Obsidian.Brushes.CheckBox.Text}"
+                                          Data="M 0 0 L 4 4 L 8 0 Z">
+                                    </Path>
+                                    <Path x:Name="ExpandededArrow"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Visibility="Collapsed"
+                                          Fill="{DynamicResource Obsidian.Brushes.CheckBox.Text}"
+                                          Data="M 0 4 L 4 0 L 8 4 Z">
+                                    </Path>
+                                    <ContentPresenter Grid.Column="1"
+                                                      Margin="6"
+                                                      ContentSource="Header"
+                                                      RecognizesAccessKey="True"
+                                                      TextBlock.Foreground="{TemplateBinding Foreground}"
+                                                      TextBlock.FontFamily="{TemplateBinding FontFamily}"
+                                                      TextBlock.FontSize="{TemplateBinding FontSize}"/>
+                                </Grid>
+                            </ToggleButton>
                         </Border>
                         <Border x:Name="Content"
                                 Grid.Row="1"
                                 BorderThickness="1 0 1 1"
-                                CornerRadius="0 0 4 4">
-                            <ContentPresenter Margin="6" />
+                                CornerRadius="0 0 4 4"
+                                BorderBrush="{DynamicResource Obsidian.Brushes.TextBox.Border}">
+                            <Border>
+                                <ContentPresenter Margin="6" />
+                            </Border>
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsExpanded" Value="True">
                             <Setter TargetName="ContentRow" Property="Height" Value="{Binding Height, ElementName=Content}" />
+                            <Setter TargetName="CollapsedArrow" Property="Visibility" Value="Hidden" />
+                            <Setter TargetName="ExpandededArrow" Property="Visibility" Value="Visible" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
