@@ -7,117 +7,133 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         Background="{DynamicResource Obsidian.Brushes.Background}">
-    <Grid>
-        <ScrollViewer>
-            <StackPanel Margin="10">
-                <GroupBox Header="Buttons" Margin="10">
-                    <StackPanel Margin="10">
-                        <Button Content="Normal button" Margin="10" />
-                        <Button Content="Accent1 button" Style="{DynamicResource Obsidian.Button.Accent1}" Margin="10" />
-                        <Button Content="Accent2 button" Style="{DynamicResource Obsidian.Button.Accent2}" Margin="10" />
-                        <Button Content="Error button" Style="{DynamicResource Obsidian.Button.Error}" Margin="10" />
-                        <Button Content="Disabled button" Margin="10" IsEnabled="False" />
-                    </StackPanel>
-                </GroupBox>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New" />
+                <MenuItem Header="Open" />
+                <Separator />
+                <MenuItem Header="Level1">
+                    <MenuItem Header="Level2">
+                        <MenuItem Header="Level3" />
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Test" />
+        </Menu>
+        
+        <Grid>
+            <ScrollViewer>
+                <StackPanel Margin="10">
+                    <GroupBox Header="Buttons" Margin="10">
+                        <StackPanel Margin="10">
+                            <Button Content="Normal button" Margin="10" />
+                            <Button Content="Accent1 button" Style="{DynamicResource Obsidian.Button.Accent1}" Margin="10" />
+                            <Button Content="Accent2 button" Style="{DynamicResource Obsidian.Button.Accent2}" Margin="10" />
+                            <Button Content="Error button" Style="{DynamicResource Obsidian.Button.Error}" Margin="10" />
+                            <Button Content="Disabled button" Margin="10" IsEnabled="False" />
+                        </StackPanel>
+                    </GroupBox>
 
-                <Expander Header="Buttons" Margin="10" IsEnabled="False" IsExpanded="True">
-                    <StackPanel Margin="10">
-                        <Button Content="Normal button" Margin="10" />
-                        <Button Content="Accent1 button" Style="{DynamicResource Obsidian.Button.Accent1}" Margin="10" />
-                        <Button Content="Accent2 button" Style="{DynamicResource Obsidian.Button.Accent2}" Margin="10" />
-                        <Button Content="Error button" Style="{DynamicResource Obsidian.Button.Error}" Margin="10" />
-                        <Button Content="Disabled button" Margin="10" IsEnabled="False" />
-                    </StackPanel>
-                </Expander>
-                
-                <TextBox Text="test" Margin="10" />
-                <TextBox Text="test" Margin="10" AcceptsReturn="True" Height="100"
-                         ScrollViewer.VerticalScrollBarVisibility="Auto"
-                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                         TextWrapping="NoWrap"/>
-                <TextBox Text="disabled textbox" Margin="10" IsEnabled="False" />
-                <TextBox Text="readonly textbox" Margin="10" IsReadOnly="True" />
-                <PasswordBox Password="test" Margin="10" />
-                <PasswordBox Password="disabled textbox" Margin="10" IsEnabled="False" />
-                <CheckBox Content="This is a checkbox" Margin="10" />
-                <CheckBox Content="This is a checkbox" Margin="10" IsChecked="{x:Null}" />
-                <CheckBox Content="This is a checkbox" Margin="10" IsChecked="True" IsEnabled="False" />
-                <RadioButton GroupName="Test" Content="Radio button 1" Margin="10" />
-                <RadioButton GroupName="Test" Content="Radio button 2" Margin="10" />
-                <RadioButton GroupName="Test2" Content="Radio button disabled" Margin="10" IsChecked="True" IsEnabled="False" />
-                <RadioButton GroupName="Test2" Content="Radio button disabled" Margin="10" IsChecked="True" IsEnabled="False" />
-                <ComboBox Margin="10">
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem IsSelected="True">test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                </ComboBox>
-                <ComboBox Margin="10" IsEditable="True">
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                    <ComboBoxItem>test</ComboBoxItem>
-                </ComboBox>
+                    <Expander Header="Buttons" Margin="10" IsEnabled="False" IsExpanded="True">
+                        <StackPanel Margin="10">
+                            <Button Content="Normal button" Margin="10" />
+                            <Button Content="Accent1 button" Style="{DynamicResource Obsidian.Button.Accent1}" Margin="10" />
+                            <Button Content="Accent2 button" Style="{DynamicResource Obsidian.Button.Accent2}" Margin="10" />
+                            <Button Content="Error button" Style="{DynamicResource Obsidian.Button.Error}" Margin="10" />
+                            <Button Content="Disabled button" Margin="10" IsEnabled="False" />
+                        </StackPanel>
+                    </Expander>
+                    
+                    <TextBox Text="test" Margin="10" />
+                    <TextBox Text="test" Margin="10" AcceptsReturn="True" Height="100"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                             TextWrapping="NoWrap"/>
+                    <TextBox Text="disabled textbox" Margin="10" IsEnabled="False" />
+                    <TextBox Text="readonly textbox" Margin="10" IsReadOnly="True" />
+                    <PasswordBox Password="test" Margin="10" />
+                    <PasswordBox Password="disabled textbox" Margin="10" IsEnabled="False" />
+                    <CheckBox Content="This is a checkbox" Margin="10" />
+                    <CheckBox Content="This is a checkbox" Margin="10" IsChecked="{x:Null}" />
+                    <CheckBox Content="This is a checkbox" Margin="10" IsChecked="True" IsEnabled="False" />
+                    <RadioButton GroupName="Test" Content="Radio button 1" Margin="10" />
+                    <RadioButton GroupName="Test" Content="Radio button 2" Margin="10" />
+                    <RadioButton GroupName="Test2" Content="Radio button disabled" Margin="10" IsChecked="True" IsEnabled="False" />
+                    <RadioButton GroupName="Test2" Content="Radio button disabled" Margin="10" IsChecked="True" IsEnabled="False" />
+                    <ComboBox Margin="10">
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Margin="10" IsEditable="True">
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                        <ComboBoxItem>test</ComboBoxItem>
+                    </ComboBox>
 
-                <ListBox Margin="10" Height="100">
-                    <ListBoxItem>Test 1</ListBoxItem>
-                    <ListBoxItem>Test 2</ListBoxItem>
-                    <ListBoxItem>Test 3</ListBoxItem>
-                    <ListBoxItem>Test 4</ListBoxItem>
-                    <ListBoxItem>Test 5</ListBoxItem>
-                    <ListBoxItem>Test 6</ListBoxItem>
-                    <ListBoxItem>Test 7</ListBoxItem>
-                    <ListBoxItem>Test 8</ListBoxItem>
-                </ListBox>
+                    <ListBox Margin="10" Height="100">
+                        <ListBoxItem>Test 1</ListBoxItem>
+                        <ListBoxItem>Test 2</ListBoxItem>
+                        <ListBoxItem>Test 3</ListBoxItem>
+                        <ListBoxItem>Test 4</ListBoxItem>
+                        <ListBoxItem>Test 5</ListBoxItem>
+                        <ListBoxItem>Test 6</ListBoxItem>
+                        <ListBoxItem>Test 7</ListBoxItem>
+                        <ListBoxItem>Test 8</ListBoxItem>
+                    </ListBox>
 
-                <ListView Margin="10" Height="100">
-                    <ListViewItem>Test 1</ListViewItem>
-                    <ListViewItem>Test 2</ListViewItem>
-                    <ListViewItem>Test 3</ListViewItem>
-                    <ListViewItem>Test 4</ListViewItem>
-                    <ListViewItem>Test 5</ListViewItem>
-                    <ListViewItem>Test 6</ListViewItem>
-                    <ListViewItem>Test 7</ListViewItem>
-                    <ListViewItem>Test 8</ListViewItem>
-                </ListView>
-            </StackPanel>
-        </ScrollViewer>
-    </Grid>
+                    <ListView Margin="10" Height="100">
+                        <ListViewItem>Test 1</ListViewItem>
+                        <ListViewItem>Test 2</ListViewItem>
+                        <ListViewItem>Test 3</ListViewItem>
+                        <ListViewItem>Test 4</ListViewItem>
+                        <ListViewItem>Test 5</ListViewItem>
+                        <ListViewItem>Test 6</ListViewItem>
+                        <ListViewItem>Test 7</ListViewItem>
+                        <ListViewItem>Test 8</ListViewItem>
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </DockPanel>
 </Window>
