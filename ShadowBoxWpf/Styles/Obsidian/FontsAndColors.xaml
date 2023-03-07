@@ -2,83 +2,51 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!-- Background -->
-    <Color x:Key="Obsidian.Colors.Background">#202020</Color>
-    <SolidColorBrush x:Key="Obsidian.Brushes.Background" Color="{DynamicResource Obsidian.Colors.Background}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Background" Color="#202020" />
 
     <!-- Accent1 -->
-    <Color x:Key="Obsidian.Colors.Accent1.Normal">#115992</Color>
-    <Color x:Key="Obsidian.Colors.Accent1.MouseOver">#1877b6</Color>
-    <Color x:Key="Obsidian.Colors.Accent1.MouseDown">#0e3d5e</Color>
-    <SolidColorBrush x:Key="Obsidian.Brushes.Accent1.Normal" Color="{DynamicResource Obsidian.Colors.Accent1.Normal}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.Accent1.MouseOver" Color="{DynamicResource Obsidian.Colors.Accent1.MouseOver}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.Accent1.MouseDown" Color="{DynamicResource Obsidian.Colors.Accent1.MouseDown}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Accent1.Normal" Color="#115992" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Accent1.MouseOver" Color="#1877b6" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Accent1.MouseDown" Color="#0e3d5e" />
 
     <!-- Accent2 -->
-    <Color x:Key="Obsidian.Colors.Accent2.Normal">#76b9ed</Color>
-    <Color x:Key="Obsidian.Colors.Accent2.MouseOver">#6da9d8</Color>
-    <Color x:Key="Obsidian.Colors.Accent2.MouseDown">#649ac3</Color>
-    <SolidColorBrush x:Key="Obsidian.Brushes.Accent2.Normal" Color="{DynamicResource Obsidian.Colors.Accent2.Normal}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.Accent2.MouseOver" Color="{DynamicResource Obsidian.Colors.Accent2.MouseOver}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.Accent2.MouseDown" Color="{DynamicResource Obsidian.Colors.Accent2.MouseDown}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Accent2.Normal" Color="#76b9ed" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Accent2.MouseOver" Color="#6da9d8" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Accent2.MouseDown" Color="#649ac3" />
 
     <!-- Error -->
-    <Color x:Key="Obsidian.Colors.Error.Normal">#973232</Color>
-    <Color x:Key="Obsidian.Colors.Error.MouseOver">#B03B3B</Color>
-    <Color x:Key="Obsidian.Colors.Error.MouseDown">#652222</Color>
-    <SolidColorBrush x:Key="Obsidian.Brushes.Error.Normal" Color="{DynamicResource Obsidian.Colors.Error.Normal}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.Error.MouseOver" Color="{DynamicResource Obsidian.Colors.Error.MouseOver}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.Error.MouseDown" Color="{DynamicResource Obsidian.Colors.Error.MouseDown}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Error.Normal" Color="#973232" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Error.MouseOver" Color="#B03B3B" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Error.MouseDown" Color="#652222" />
     
     <!-- Button -->
-    <Color x:Key="Obsidian.Colors.Button.Border">#353535</Color>
-    <Color x:Key="Obsidian.Colors.Button.Normal">#2d2d2d</Color>
-    <Color x:Key="Obsidian.Colors.Button.MouseOver">#323232</Color>
-    <Color x:Key="Obsidian.Colors.Button.MouseDown">#272727</Color>
-    <Color x:Key="Obsidian.Colors.Button.Text">#cecece</Color>
-    <Color x:Key="Obsidian.Colors.Button.TextDisabled">#787878</Color>
-    <SolidColorBrush x:Key="Obsidian.Brushes.Button.Border" Color="{DynamicResource Obsidian.Colors.Button.Border}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.Button.Normal" Color="{DynamicResource Obsidian.Colors.Button.Normal}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.Button.MouseOver" Color="{DynamicResource Obsidian.Colors.Button.MouseOver}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.Button.MouseDown" Color="{DynamicResource Obsidian.Colors.Button.MouseDown}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.Button.Text" Color="{DynamicResource Obsidian.Colors.Button.Text}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.Button.TextDisabled" Color="{DynamicResource Obsidian.Colors.Button.TextDisabled}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Button.Border" Color="#353535" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Button.Normal" Color="#2d2d2d" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Button.MouseOver" Color="#323232" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Button.MouseDown" Color="#272727" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Button.Text" Color="#cecece" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.Button.TextDisabled" Color="#787878" />
 
     <!-- TextBox -->
-    <Color x:Key="Obsidian.Colors.TextBox.Border">#303030</Color>
-    <Color x:Key="Obsidian.Colors.TextBox.Normal">#2d2d2d</Color>
-    <Color x:Key="Obsidian.Colors.TextBox.MouseOver">#323232</Color>
-    <Color x:Key="Obsidian.Colors.TextBox.MouseDown">#1f1f1f</Color>
-    <Color x:Key="Obsidian.Colors.TextBox.Text">#e1e1e1</Color>
-    <Color x:Key="Obsidian.Colors.TextBox.TextDisabled">#787878</Color>
-    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.Border" Color="{DynamicResource Obsidian.Colors.TextBox.Border}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.Normal" Color="{DynamicResource Obsidian.Colors.TextBox.Normal}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.MouseOver" Color="{DynamicResource Obsidian.Colors.TextBox.MouseOver}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.MouseDown" Color="{DynamicResource Obsidian.Colors.TextBox.MouseDown}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.Text" Color="{DynamicResource Obsidian.Colors.TextBox.Text}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.TextDisabled" Color="{DynamicResource Obsidian.Colors.TextBox.TextDisabled}" />
-
+    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.Border" Color="#303030" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.Normal" Color="#2d2d2d" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.MouseOver" Color="#323232" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.MouseDown" Color="#1f1f1f" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.Text" Color="#e1e1e1" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.TextBox.TextDisabled" Color="#787878" />
 
     <!-- CheckBox -->
-    <Color x:Key="Obsidian.Colors.CheckBox.Border">#a8a8a8</Color>
-    <Color x:Key="Obsidian.Colors.CheckBox.Normal">#1d1d1d</Color>
-    <Color x:Key="Obsidian.Colors.CheckBox.MouseOver">#2a2a2a</Color>
-    <Color x:Key="Obsidian.Colors.CheckBox.MouseDown">#303030</Color>
-    <Color x:Key="Obsidian.Colors.CheckBox.Text">#eeeeee</Color>
-    <Color x:Key="Obsidian.Colors.CheckBox.TextDisabled">#717171</Color>
-    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.Border" Color="{DynamicResource Obsidian.Colors.CheckBox.Border}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.Normal" Color="{DynamicResource Obsidian.Colors.CheckBox.Normal}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.MouseOver" Color="{DynamicResource Obsidian.Colors.CheckBox.MouseOver}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.MouseDown" Color="{DynamicResource Obsidian.Colors.CheckBox.MouseDown}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.Text" Color="{DynamicResource Obsidian.Colors.CheckBox.Text}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.TextDisabled" Color="{DynamicResource Obsidian.Colors.CheckBox.TextDisabled}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.Border" Color="#a8a8a8" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.Normal" Color="#1d1d1d" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.MouseOver" Color="#2a2a2a" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.MouseDown" Color="#303030" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.Text" Color="#eeeeee" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.CheckBox.TextDisabled" Color="#717171" />
 
     <!-- ScrollBar -->
-    <Color x:Key="Obsidian.Colors.ScrollBar.Normal">#a8a8a8</Color>
-    <Color x:Key="Obsidian.Colors.ScrollBar.MouseOver">#cecece</Color>
-    <Color x:Key="Obsidian.Colors.ScrollBar.MouseDown">#e1e1e1</Color>
-    <SolidColorBrush x:Key="Obsidian.Brushes.ScrollBar.Normal" Color="{DynamicResource Obsidian.Colors.ScrollBar.Normal}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.ScrollBar.MouseOver" Color="{DynamicResource Obsidian.Colors.ScrollBar.MouseOver}" />
-    <SolidColorBrush x:Key="Obsidian.Brushes.ScrollBar.MouseDown" Color="{DynamicResource Obsidian.Colors.ScrollBar.MouseDown}" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.ScrollBar.Normal" Color="#a8a8a8" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.ScrollBar.MouseOver" Color="#cecece" />
+    <SolidColorBrush x:Key="Obsidian.Brushes.ScrollBar.MouseDown" Color="#e1e1e1" />
 
     <!-- D3 -->
     <!--<Color x:Key="Obsidian.Colors.D3.Border">#2b2b2b</Color>
